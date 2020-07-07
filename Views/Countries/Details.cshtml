@@ -1,0 +1,24 @@
+﻿@model monitor_covid19.Models.Country
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detalhes</h3>
+
+<div>
+    <h4>País</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">&larr; Voltar</a> |
+    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+</div>

@@ -1,0 +1,44 @@
+﻿@model monitor_covid19.Models.Statistic
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Excluir</h3>
+
+<h4>Você tem certeza que deseja excluir este registro?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmedCases)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmedCases)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Deaths)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Deaths)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recovereds)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Recovereds)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index">&larr; Voltar</a> |
+        <input type="submit" value="Excluir" class="btn btn-sm btn-danger" />
+    </form>
+</div>

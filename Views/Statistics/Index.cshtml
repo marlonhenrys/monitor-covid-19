@@ -1,0 +1,55 @@
+﻿@model IEnumerable<monitor_covid19.Models.Statistic>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Estatísticas</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Criar Nova</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead style="background-color:#333;color:white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfirmedCases)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deaths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recovereds)
+            </th>
+            <th>
+                Opções
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfirmedCases)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deaths)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recovereds)
+            </td>
+            <td>
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="btn btn-sm btn-success" asp-action="Details" asp-route-id="@item.Id">Exibir</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
